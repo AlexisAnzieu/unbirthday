@@ -1,16 +1,10 @@
 import mysql from "mysql2/promise";
 
-// Database connection configuration
-const dbConfig = {
-  host: process.env.MYSQL_HOST || "localhost",
-  user: process.env.MYSQL_USER || "root",
-  password: process.env.MYSQL_PASSWORD || "",
-  database: process.env.MYSQL_DATABASE || "unbirthday_db",
-  port: parseInt(process.env.MYSQL_PORT || "3306"),
-};
+// Database connection configuration using URL
+const dbUrl = process.env.DATABASE_URL!;
 
 // Create connection pool
-const pool = mysql.createPool(dbConfig);
+const pool = mysql.createPool(dbUrl);
 
 // Initialize database and tables
 export const initDatabase = async () => {

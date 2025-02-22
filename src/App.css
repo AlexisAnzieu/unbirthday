@@ -160,7 +160,7 @@ h1 {
   color: #e6d5ff;
   border: 1px solid #6b4c6b;
   padding: 1.2rem 2.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -469,4 +469,14 @@ h1 {
   margin: 0 0.5rem;
   display: inline-block;
   animation: float 4s ease-in-out infinite;
+}
+
+.success-message {
+  background-color: rgba(75, 181, 67, 0.1);
+  color: #4BB543;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 3rem;
 }

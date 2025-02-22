@@ -1,7 +1,0 @@
-- des jeux de cartes
-- chapelier fou
-- lapin qui court apres une montre
-- de la vegetation
-- jeux echec
-- des champipgons
-- une theietre

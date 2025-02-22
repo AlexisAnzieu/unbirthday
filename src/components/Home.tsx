@@ -3,27 +3,19 @@ import { addGuest } from "../db";
 import "../App.css";
 
 function Home() {
-  const [timeLeft, setTimeLeft] = useState("00:00:00");
+  const [timeLeft, setTimeLeft] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ firstName: "", lastName: "" });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
-      const eventDate = new Date("2024-03-29T19:00:00");
+      const eventDate = new Date("2025-03-29T19:00:00");
       const diff = eventDate.getTime() - now.getTime();
 
-      const hours = Math.floor(
-        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      setTimeLeft(
-        `${hours.toString().padStart(2, "0")}:${minutes
-          .toString()
-          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
-      );
+      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      setTimeLeft(`${days} jours restants`);
     }, 1000);
 
     return () => {
@@ -68,17 +60,6 @@ function Home() {
             </div>
 
             <div className="event-section">
-              <p className="event-highlight">✨ Les Activités</p>
-              <p>Nous vous avons concocté :</p>
-              <p>• Des activités délirantes</p>
-              <p>• Des énigmes aussi mystérieuses que le Chat du Cheshire</p>
-              <p>
-                • Des moments de pur enchantement dans un pays où l'impossible
-                n'existe pas...
-              </p>
-            </div>
-
-            <div className="event-section">
               <p className="event-highlight">🎩 Dress Code</p>
               <p>
                 Enfilez vos bottes de voyageur audacieux, ajustez votre chapeau
@@ -94,6 +75,12 @@ function Home() {
                 savoir combien de tasses de thé préparer !{" "}
                 <span className="event-emoji">🫖</span>
               </p>
+              <br />
+              <p>
+                Nous avons hâte de vous retrouver pour cette aventure
+                inoubliable ! 💫
+              </p>
+              <br />
               <p className="event-highlight">✨ Carla & Hortense ✨</p>
             </div>
           </div>
@@ -129,16 +116,23 @@ function Home() {
                 }
                 className="modal-input"
               />
+              {showSuccess && (
+                <div className="success-message">
+                  Merci {formData.firstName} {formData.lastName} ! Nous avons
+                  hâte de vous voir à la fête du thé ! 🫖
+                </div>
+              )}
               <button
                 className="whimsical-button"
                 onClick={() => {
                   try {
                     addGuest(formData.firstName, formData.lastName);
-                    alert(
-                      `Merci ${formData.firstName} ${formData.lastName} ! Nous avons hâte de vous voir à la fête du thé ! 🫖`
-                    );
-                    setIsModalOpen(false);
-                    setFormData({ firstName: "", lastName: "" });
+                    setShowSuccess(true);
+                    setTimeout(() => {
+                      setIsModalOpen(false);
+                      setFormData({ firstName: "", lastName: "" });
+                      setShowSuccess(false);
+                    }, 10000);
                   } catch (err) {
                     console.error("Error adding guest:", err);
                     alert("Une erreur est survenue lors de l'enregistrement.");

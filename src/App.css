@@ -117,10 +117,27 @@ body {
   text-align: center;
   position: relative;
   z-index: 5;
-  animation: float 6s ease-in-out infinite;
   box-shadow: 0 10px 30px rgba(106, 90, 205, 0.3),
               0 0 50px rgba(0, 0, 0, 0.5),
               inset 0 0 30px rgba(106, 90, 205, 0.3);
+}
+
+@media (min-width: 601px) {
+  .card {
+    animation: float 6s ease-in-out infinite;
+  }
+  .guest-item {
+    animation: float 3s ease-in-out infinite;
+  }
+  .event-section {
+    animation: float 6s ease-in-out infinite;
+  }
+  .modal {
+    animation: float 3s ease-in-out infinite;
+  }
+  .event-emoji {
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
 .card * {
@@ -237,11 +254,23 @@ h1 {
   .time-display {
     font-size: 2.2rem;
   }
-  .container {
-    padding: 1rem;
-  }
   .card {
     padding: 2rem;
+    animation: none;
+    transform: none;
+  }
+  .modal {
+    animation: none;
+    transform: none;
+  }
+  .guest-item {
+    animation: slideIn 0.3s ease-out forwards;
+    transform: none;
+    transform: none;
+  }
+  .event-section {
+    animation: none;
+    transform: none;
   }
   .floating-teapot {
     width: 80px;
@@ -285,6 +314,10 @@ h1 {
   .vegetation {
     height: 60px;
   }
+  .event-emoji {
+    animation: none;
+    transform: none;
+  }
 }
 
 .modal-overlay {
@@ -311,7 +344,6 @@ h1 {
   width: 90%;
   text-align: center;
   position: relative;
-  animation: float 3s ease-in-out infinite;
   box-shadow: 0 10px 30px rgba(106, 90, 205, 0.3),
               0 0 50px rgba(0, 0, 0, 0.5),
               inset 0 0 30px rgba(106, 90, 205, 0.3);
@@ -388,7 +420,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: float 3s ease-in-out infinite;
   box-shadow: 0 5px 15px rgba(106, 90, 205, 0.2);
 }
 
@@ -443,7 +474,6 @@ h1 {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(107, 76, 107, 0.3);
-  animation: float 6s ease-in-out infinite;
   box-shadow: 0 5px 15px rgba(106, 90, 205, 0.2);
   margin: 0.5rem 0;
 }
@@ -468,7 +498,6 @@ h1 {
   font-size: 1.8rem;
   margin: 0 0.5rem;
   display: inline-block;
-  animation: float 4s ease-in-out infinite;
 }
 
 .success-message {

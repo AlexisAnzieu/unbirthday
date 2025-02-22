@@ -4,23 +4,14 @@ import "../App.css";
 
 function Home() {
   const [timeLeft, setTimeLeft] = useState("00:00:00");
-  const [teaQuote, setTeaQuote] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ firstName: "", lastName: "" });
-
-  const quotes = [
-    "Un très joyeux non-anniversaire à vous !",
-    "C'est toujours l'heure du thé !",
-    "Nous sommes tous fous ici !",
-    "Pourquoi un corbeau ressemble-t-il à un bureau ?",
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
-      const midnight = new Date();
-      midnight.setHours(24, 0, 0, 0);
-      const diff = midnight.getTime() - now.getTime();
+      const eventDate = new Date("2024-03-29T19:00:00");
+      const diff = eventDate.getTime() - now.getTime();
 
       const hours = Math.floor(
         (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -35,13 +26,8 @@ function Home() {
       );
     }, 1000);
 
-    const quoteTimer = setInterval(() => {
-      setTeaQuote((prev) => (prev + 1) % quotes.length);
-    }, 5000);
-
     return () => {
       clearInterval(timer);
-      clearInterval(quoteTimer);
     };
   }, []);
 
@@ -49,17 +35,16 @@ function Home() {
     <React.Fragment>
       <div className="container">
         <div className="card">
-          <p className="subtitle">Carla et Hortense te souhaitent</p>
+          <p className="subtitle">Très chers invités,</p>
           <div className="border-decoration" />
-          <h1>Un Très Joyeux Non-Anniversaire !</h1>
-          <p className="subtitle">Le samedi 29 mars</p>
+          <h1>Joyeux </h1>
+          <h1> Non-Anniversaire</h1> <h1> à tous !</h1>
           <div className="event-details">
             <div className="event-section">
               <p className="event-highlight">🎭 L'Invitation</p>
               <p>
-                Très chers invités, Joyeux Non-Anniversaire à tous ! Nous vous
-                invitons à vivre une soirée hors du temps, plongeant dans
-                l'univers fantastique d'Alice au Pays des Merveilles.
+                Nous vous invitons à vivre une soirée hors du temps, plongeant
+                dans l'univers fantastique d'Alice au Pays des Merveilles.
               </p>
             </div>
 
@@ -113,7 +98,6 @@ function Home() {
             </div>
           </div>
           <div className="time-display">{timeLeft}</div>
-          <p className="quote">{quotes[teaQuote]}</p>
           <button
             className="whimsical-button"
             onClick={() => setIsModalOpen(true)}

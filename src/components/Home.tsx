@@ -132,7 +132,7 @@ function Home() {
                       setIsModalOpen(false);
                       setFormData({ firstName: "", lastName: "" });
                       setShowSuccess(false);
-                    }, 10000);
+                    }, 3000);
                   } catch (err) {
                     console.error("Error adding guest:", err);
                     alert("Une erreur est survenue lors de l'enregistrement.");

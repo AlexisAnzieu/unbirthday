@@ -53,10 +53,65 @@ function Home() {
           <div className="border-decoration" />
           <h1>Un Très Joyeux Non-Anniversaire !</h1>
           <p className="subtitle">Le samedi 29 mars</p>
-          <p className="subtitle">
-            C'est l'heure du thé et de la célébration !
-          </p>
-          <p className="subtitle">Prochain non-anniversaire commence dans :</p>
+          <div className="event-details">
+            <div className="event-section">
+              <p className="event-highlight">🎭 L'Invitation</p>
+              <p>
+                Très chers invités, Joyeux Non-Anniversaire à tous ! Nous vous
+                invitons à vivre une soirée hors du temps, plongeant dans
+                l'univers fantastique d'Alice au Pays des Merveilles.
+              </p>
+            </div>
+
+            <div className="event-section">
+              <p className="event-highlight">📅 Quand ?</p>
+              <p>Samedi 29 mars - L'heure du thé débutera à 19h !</p>
+            </div>
+
+            <div className="event-section">
+              <p className="event-highlight">🎪 Au programme</p>
+              <p>
+                Des jeux d'équipe aussi surprenants que les aventures d'Alice,
+                où l'esprit de compétition rivalisera avec la vitesse du Lapin
+                Blanc <span className="event-emoji">🐇</span>
+              </p>
+              <p>
+                La meilleure équipe repartira avec un prix aussi extravagant que
+                le Chapelier Fou lui-même !
+                <span className="event-emoji">🎁</span>
+              </p>
+            </div>
+
+            <div className="event-section">
+              <p className="event-highlight">✨ Les Activités</p>
+              <p>Nous vous avons concocté :</p>
+              <p>• Des activités délirantes</p>
+              <p>• Des énigmes aussi mystérieuses que le Chat du Cheshire</p>
+              <p>
+                • Des moments de pur enchantement dans un pays où l'impossible
+                n'existe pas...
+              </p>
+            </div>
+
+            <div className="event-section">
+              <p className="event-highlight">🎩 Dress Code</p>
+              <p>
+                Enfilez vos bottes de voyageur audacieux, ajustez votre chapeau
+                le plus extravagant et laissez-vous emporter dans ce monde
+                merveilleux où les règles du réel sont suspendues !
+              </p>
+            </div>
+
+            <div className="event-section">
+              <p>
+                Merci de confirmer votre présence avant que la Reine de Cœur ne
+                s'énerve et n'ordonne de couper des têtes. Nous avons besoin de
+                savoir combien de tasses de thé préparer !{" "}
+                <span className="event-emoji">🫖</span>
+              </p>
+              <p className="event-highlight">✨ Carla & Hortense ✨</p>
+            </div>
+          </div>
           <div className="time-display">{timeLeft}</div>
           <p className="quote">{quotes[teaQuote]}</p>
           <button

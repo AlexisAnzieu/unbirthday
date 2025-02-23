@@ -52,6 +52,9 @@ function GuestList() {
     <div className="guest-list-container">
       <div className="card">
         <h1>Liste des invités</h1>
+        <p className="guest-count">
+          {guests.length} {guests.length <= 1 ? "invité" : "invités"}
+        </p>
         <p className="subtitle">Pour le samedi 29 mars</p>
         <div className="sort-controls">
           <button

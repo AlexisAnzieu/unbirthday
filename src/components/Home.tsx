@@ -46,6 +46,11 @@ function Home() {
             </div>
 
             <div className="event-section">
+              <p className="event-highlight">📍 Où ?</p>
+              <p>Au 373 Avenue Mont-Royal Est </p>
+            </div>
+
+            <div className="event-section">
               <p className="event-highlight">🎪 Au programme</p>
               <p>
                 Des jeux d'équipe aussi surprenants que les aventures d'Alice,

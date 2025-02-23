@@ -119,7 +119,7 @@ function Home() {
               {showSuccess && (
                 <div className="success-message">
                   Merci {formData.firstName} {formData.lastName} ! Nous avons
-                  hâte de vous voir à la fête du thé ! 🫖
+                  hâte de vous voir au pays des merveilles ! 🫖
                 </div>
               )}
               <button

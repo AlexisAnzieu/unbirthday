@@ -13,6 +13,44 @@
   font-size: 3rem;
 }
 
+.timer-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #b19cd9;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.timer-input-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.timer-input {
+  background: rgba(42, 10, 42, 0.6);
+  border: 3px solid #6b4c6b;
+  color: #fff;
+  padding: 0.75rem;
+  font-size: 1.8rem;
+  width: 100px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 0 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.timer-input:focus {
+  outline: none;
+  border-color: #b19cd9;
+  box-shadow: 0 0 20px rgba(177, 156, 217, 0.5);
+  transform: scale(1.05);
+}
+
 .pocket-watch {
   position: relative;
   width: 375px;

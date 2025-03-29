@@ -7,10 +7,10 @@ function Timer() {
   const [isRunning, setIsRunning] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
-  const getTimerDuration = () => {
+  const getTimerDuration = useCallback(() => {
     const minutes = parseInt(customMinutes) || 15;
     return Math.max(1, Math.min(60, minutes)) * 60;
-  };
+  }, [customMinutes]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);

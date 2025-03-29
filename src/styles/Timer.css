@@ -1,0 +1,114 @@
+.timer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  min-height: 600px;
+}
+
+.timer-title {
+  margin: 0;
+  padding: 1.5rem 0;
+  font-size: 3rem;
+}
+
+.pocket-watch {
+  position: relative;
+  width: 375px;
+  height: 375px;
+  background: radial-gradient(circle at center, #2a0a2a, #1a0a1a);
+  border-radius: 50%;
+  border: 6px solid #6b4c6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 45px rgba(106, 90, 205, 0.3),
+              inset 0 0 75px rgba(106, 90, 205, 0.2);
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+.pocket-watch::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 60px;
+  background: linear-gradient(135deg, #6b4c6b, #4a1a4a);
+  border-radius: 15px 15px 0 0;
+  border: 3px solid #6b4c6b;
+}
+
+.timer-display {
+  font-size: 6rem;
+  text-shadow: 0 0 30px rgba(230, 213, 255, 1),
+               0 0 45px rgba(230, 213, 255, 0.8),
+               0 0 60px rgba(177, 156, 217, 0.6);
+  animation: glow 2s ease-in-out infinite;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.timer-button {
+  min-width: 225px;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #2a0a2a, #1a0a1a);
+}
+
+.reset-button:hover {
+  background: linear-gradient(135deg, #4a2a4a, #2a1a2a);
+}
+
+.timer-quote {
+  font-size: 2.7rem;
+  color: #b19cd9;
+  text-align: center;
+  margin-top: 3rem;
+  line-height: 1.4;
+  animation: purpleGlow 4s ease-in-out infinite;
+}
+
+@media (max-width: 500px) {
+  .pocket-watch {
+    width: 300px;
+    height: 300px;
+  }
+
+  .timer-display {
+    font-size: 4.5rem;
+  }
+
+  .timer-controls {
+    flex-direction: column;
+  }
+
+  .timer-quote {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .pocket-watch {
+    width: 270px;
+    height: 270px;
+  }
+
+  .timer-display {
+    font-size: 3.75rem;
+  }
+
+  .timer-quote {
+    font-size: 1.8rem;
+  }
+}
